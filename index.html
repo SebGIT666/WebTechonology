@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Divide</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--POPUP WINDOW-->
+    <div id="popup">
+        <div id="popup-content">
+            <h2>Warning</h2>
+            <p>This expierience contains sounds of alien nature.</p>
+            <p>For the best expierience, turn on youe speakres.</p>
+            <div id="popup-buttons">
+                <button id="btn-sound-on">Enable Sound</button>
+                <button id="btn-sound-off">Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <!--HEADER-->
+    <header id="main-header">
+        <nav>
+            <div id="logo">
+                <span class="logo-cosmic">COSMIC</span>
+                <span class="logo-divide">DIVIDE</span>
+            </div>
+            <ul id="nav-links">
+                <li>EXPLORE</li>
+                <li>THE RIFT</li>
+                <li>FAQ</li>
+                <li>CONTACT</li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <!--MAIN CONTENT-->
+    <main>
+
+        <!--SECTION PORTAL-->
+        <section id="portal">
+            <div class="section-content">
+                <h1>COSMIC DIVIDE</h1>
+                <p class="tagline">Cross The Border Of Known Reality.</p>
+                <p class="subtitle">Exploration Of The Extremes.</p>
+            </div>
+
+        </section>
+
+        <!--Section BIOMS-->
+        <section id="biomes">
+            <!--INFERNO CORE-->
+            <div id="inferno" class="biome">
+                <div class="biome-content">
+                    <h2>INFERNO CORE</h2>
+                    <p>Raw power of destruction and creation.
+                        Explore biomes where temperature reaches
+                        the limits of matter.</p>
+                    <button class="btn-inferno" onclick="goToBiome('inferno')">Enter The Fire</button>
+                </div>
+            </div>
+
+            <!--THE RIFT-->
+            <div id="rift">
+                <h2>WHERE OPPOSITES MEET</h2>
+            </div>
+
+            <!--AZURE ABYSS-->
+            <div id="abyss" class="biome">
+                <div class="biome-content">
+                    <h2>AZURE ABYSS</h2>
+                    <p>Silence, depth and mystery.
+                        explore the underwater metropolis
+                        of alien nature teeming with life.</p>
+                    <button class="btn-abyss" onclick="goToBiome('abyss')">Dive Into The Abyss</button>
+                </div>
+            </div>
+        </section>
+
+        <!--Section SYNTHESIS-->
+        <section id="synthesis">
+            <div class="section-content">
+                <h2>THE SYNTHESIS</h2>
+                <p>Where fire meets water.
+                    Where destruction meets creation.</p>
+                <h3>YOUR JOURNEY HAS JUST BEGUN</h3>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!--FOOTER-->
+    <footer id="main-footer">
+        <div id="footer-nav">
+            <span>About</span>
+            <span>Privacy</span>
+            <span>Legal</span>
+            <span>Contact</span>
+        </div>
+
+        <div id="footer-hours">
+            <p>Open Every Day: 9:00 AM - 6:00 PM</p>
+        </div>
+
+        <div id="footer-copy">
+            <p>&copy; 2026 Cosmic Divide. All rights reserved</p>
+        </div>
+    </footer>
+
+    
+    <script src="main.js"></script>
+</body>
+</html>
