@@ -11,7 +11,7 @@ html {
 body {
     font-family: 'Exo 2', sans-serif;
     color: #e0e0e0;
-    background-color: #e0e0e0;
+    background-color: #0a0a0a;
     overflow-x: hidden;
 }
 
@@ -138,7 +138,7 @@ body::before {
     transition: all 0.3s ease;
 }
 
-btn-sound-on:hover {
+#btn-sound-on:hover {
     background-color: #ffb300;
     color: #000000;
 }
@@ -164,15 +164,31 @@ btn-sound-on:hover {
 
 
 #portal {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 70px;
+    padding-top: 90px;
+    padding-bottom: 0px;
+    gap: 10px;
 }
 
-#portal .section-conent h1 {
+#img-portal {
+    width: 300px;
+    height: 300px;
+    max-width: 80%;
+    z-index: 1;
+    object-fit: contain;
+}
+
+#portal .section-content {
+    z-index: 2;
+    text-align: center;
+}
+
+#portal .section-content h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 4rem;
     font-weight: 900;
@@ -200,41 +216,48 @@ btn-sound-on:hover {
 
 
 #biomes {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 100px 40px;
+    padding: 0px;
+    overflow: visible;
+    gap: 0px;
 }
 
 .biome {
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 40px;
+    text-align: center;
+    padding: 20px 0px;
+    gap: 20px;
 }
 
-#inferno {
-    background: linear-gradient(135deg,
-    rgba(139,0,0,0.6)
-    rgba(26,0,0,0.8)
-    );
-    clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+.floating-island {
+    width: 840px;
+    height: 800px;
+    max-width: 100%;
+    animation: float 4s ease-in-out infinite;
+    object-fit: contain;
 }
 
-#abyss {
-    background: linear-gradient(135deg
-    rgba(0,13,26,0.8)
-    rgba(0,119,182,06)
-    );
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+#img-inferno {
+    filter: drop-shadow(0 0 30px rgba(255,100,0,0.3));
+}
+
+#img-abyss {
+    filter: drop-shadow(0 0 30px rgba(0,180,216,0.3));
 }
 
 .biome-content {
     max-width: 400px;
     text-align: center;
+    margin-top: 0px;
 }
 
 .biome-content h2 {
@@ -295,41 +318,49 @@ btn-sound-on:hover {
 }
 
 #rift {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
     text-align: center;
     z-index: 10;
+    gap: 20px;
 }
 
-#rify h2 {
+#rift h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 5px;
     color: rgba(255,255,255,0.6);
 }
 
+#img-rift {
+    width: 500px;
+    height: 500px;
+    filter: drop-shadow(0 0 40px rgba(255,255,255,0.4));
+}
 
 
 
 
 #synthesis {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 40px;
+    padding: 60px 40px;
     background: linear-gradient(180deg,
-    rgba(139,0,0,0.3)
-    rgba(0,0,0,0.8)
+    rgba(139,0,0,0.3),
+    rgba(0,0,0,0.8),
     rgba(0,119,182,0.3)
     );
 }
 
 #synthesis .section-content h2 {
-    font-family: 'Orbitrom', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
     font-weight: 900;
     letter-spacing: 8px;
@@ -337,15 +368,15 @@ btn-sound-on:hover {
     margin-bottom: 20px;
 }
 
-#synthesis .section-conent p {
-    font-size: 0.95;
+#synthesis .section-content p {
+    font-size: 0.95rem;
     letter-spacing: 3px;
     color: rgba(255,255,255,0.6);
     line-height: 1.8;
     margin-bottom: 40px;
 }
 
-#synthesis .section-conent h3 {
+#synthesis .section-content h3 {
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
     letter-spacing: 6px;
@@ -370,7 +401,7 @@ btn-sound-on:hover {
     margin-bottom: 20px;
 }
 
-#footer-nav spav {
+#footer-nav span {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 2px;
