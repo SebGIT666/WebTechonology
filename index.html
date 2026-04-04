@@ -65,7 +65,7 @@
                     <p>Raw power of destruction and creation.
                         Explore biomes where temperature reaches
                         the limits of matter.</p>
-                    <button class="btn-inferno" onclick="goToBiome('inferno')">Enter The Fire</button>
+                    <button class="btn-inferno" onclick="openModal('inferno')">Enter The Fire</button>
                 </div>
             </div>
 
@@ -83,7 +83,7 @@
                     <p>Silence, depth and mystery.
                         Explore the underwater metropolis
                         of alien nature teeming with life.</p>
-                    <button class="btn-abyss" onclick="goToBiome('abyss')">Dive Into The Abyss</button>
+                    <button class="btn-abyss" onclick="openModal('abyss')">Dive Into The Abyss</button>
                 </div>
             </div>
         </section>
@@ -118,6 +118,100 @@
             <p>&copy; 2026 Cosmic Divide. All rights reserved</p>
         </div>
     </footer>
+
+    <!--INFERNO MODAL-->
+    <div id="modal-inferno" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container modal-inferno">
+            <!--CLOSE BUTTON-->
+            <button class="modal-close" onclick="closeModal('inferno')">X</button>
+            
+            <!--LEFT SIDE IMAGE-->
+            <div class="modal-left">
+                <img src="images/inferno_modal_bg.png" alt="Inferno Core landscape" class="modal-bg-img">
+                <img src="images/phoenix.png" alt="Ignis the Phoenix" class="modal-creature">
+            </div>
+
+            <!--RIGHT SIDE CONTENT-->
+            <div class="modal-right">
+                <h2 class="modal-title modal-title-inferno">INFERNO CORE</h2>
+                <p class="modal-subtitle">Seb Prime 100 - 147th Moon of Saturn</p>
+                
+                <div class="modal-section">
+                    <h3>The Biome</h3>
+                    <p>A vast volcanic landscape of osidian rock and molten lava rivers. 
+                        Temperature reaches 2,400C at the crater's core. 
+                        The geothermal energy powering the entire planet originates here.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Guardian - Ignis</h3>
+                    <p>The Phoenix Xeron lives for 333 years before combusting in the volcanic crater.
+                        From its ashes, new life erupts within 72hours.
+                        Its feathers conduct geothermal energy across the planet.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Flora</h3>
+                    <p>Xenite Bloom - crystal flowers that absorbs CO2. Ashroot Tree - indestructible
+                        black trees grown from phoenix ash. Embervine - glowing vines feeding on lava heat.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Experiences</h3>
+                    <p>Magma Gondola - Crystal Mine T
+                        our - Phoenix Watch Platform - Heat Lab - Lava River Cruise</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--AZURE ABYSS MODAL-->
+    <div id="modal-abyss" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container modal-abyss">
+
+            <!--CLOSE BUTTON-->
+            <button class="modal-close" onclick="closeModal('abyss')">X</button>
+
+            <!--LEFT SIDE IMAGE-->
+            <div class="modal-left">
+                <img src="images/abyss_modal_bg.png" alt="Azure Abyss underwater" class="modal-bg-img">
+                <img src="images/cracken.png" alt="Krakenis the Guardian" class="modal-creature">
+            </div>
+
+            <!--RIGHT SIDE CONTENT-->
+            <div class="modal-right">
+                <h2 class="modal-title modal-title-abyss">AZURE ABYSS</h2>
+                <p class="modal-subtitle">Seb Prime 100 - 147th Moon of Saturn</p>
+
+                <div class="modal-section">
+                    <h3>The Biome</h3>
+                    <p>A vast bioluminescent ocean warmed by underground lava tunnels from Inferno Core.
+                        Crystal coral reefs grow on obsidian glass formed where lava meets water at The Rift.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Guardian - Krakenis</h3>
+                    <p>An ancient being built from coral and cosmic obsidian. Its tentacles reach the thermal
+                        tunnels connecting both biomes. Without Krakenis, the ocean would freeze.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Flora</h3>
+                    <p>Luminos Coral - reef that glows and plays music. Tideweed - algae changing colour with
+                        emotions. Crystal Kelp - underwater crystal forest instead of seaweed.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Experiences</h3>
+                    <p>Deep Dive Pod - Crystal Reef Walk - Bioluminescene Night Swim - Mood Fish Aquarium - 
+                        Surface Safari</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     
     <script src="main.js"></script>

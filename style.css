@@ -64,6 +64,7 @@ body::before {
     display: flex;
     list-style: none;
     gap: 3%;
+    white-space: nowrap;
 }
 
 #nav-links li {
@@ -474,4 +475,190 @@ body::before {
     color: rgba(255,255,255,0.3);
     margin-top: 2vh;
     letter-spacing: 0.1vw;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000000cc;
+    cursor: pointer;
+}
+
+.modal-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 85vw;
+    height: 80vh;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 100000;
+    border: 1px solid #ffffff1a;
+}
+
+.modal-inferno {
+    border-color: #ffb300;
+    box-shadow: 
+        0 0 40px #8b000066,
+        0 0 80px #cc220033;
+}
+
+.modal-abyss {
+    border-color: #00b4db;
+    box-shadow: 
+        0 0 40px #0077b666,
+        0 0 80px #00b4d833;
+}
+
+.modal-close {
+    position: absolute;
+    top: 2vh;
+    right: 2vw;
+    background: #000000b3;
+    border: 1px solid #ffffff33;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 1.2vw;
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+    z-index: 100001;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: #ffffff33;
+    transform: scale(1.1);
+}
+
+.modal-left {
+    position: relative;
+    width: 45%;
+    overflow: hidden;
+} 
+
+.modal-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-creature {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px #ff640066);
+}
+
+.modal-abyss .modal-creature {
+    filter: drop-shadow(0 0 20px #00b4d866);
+}
+
+.modal-right {
+    width: 55%;
+    padding: 4vh 3vw;
+    overflow-y: auto;
+    background: #0a0a0ae6;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.modal-right::-webkit-scrollbar {
+    width: 4px;
+}
+
+.modal-right::-webkit-scrollbar-thumb {
+    background: #ffb300;
+    border-radius: 2px;
+}
+
+.modal-right::-webkit-scrollbar-track {
+    background: #ffffff1a;
+}
+
+.modal-abyss .modal-right::-webkit-scrollbar-thumb {
+    background: #00b4db;
+}
+
+.modal-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5vw;
+    font-weight: 900;
+    letter-spacing: 0.5vw;
+    white-space: nowrap;
+}
+
+.modal-title-inferno {
+    color: #ffb300;
+    text-shadow: 0 0 20px #ffb30066;
+}
+
+.modal-title-abyss {
+    color: #00b4d8;
+    text-shadow: 0 0 20px #00b4d866;
+}
+
+.modal-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7vw;
+    letter-spacing: 0.3vw;
+    color: #ffffff66;
+}
+
+.modal-section {
+    border-left: 2px solid #ffb30066;
+    padding-left: 1.5vw;
+}
+
+.modal-abyss .modal-section {
+    border-left-color: #00b4d866;
+}
+
+.modal-section h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9vw;
+    letter-spacing: 0.2vw;
+    margin-bottom: 1vh;
+}
+
+.modal-inferno .modal-section h3 {
+    color: #ffb300;
+}
+
+.modal-abyss .modal-section h3 {
+    color: #00b4d8;
+}
+
+.modal-section p {
+    font-size: 0.85vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
 }
