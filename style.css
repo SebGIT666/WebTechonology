@@ -662,3 +662,280 @@ body::before {
     line-height: 1.8;
     color: #e0e0e0b3;
 }
+
+/* SCROLL ANIMATIONS*/
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*MEDIA QUERIES - TABLET*/
+@media (max-width: 1024px) {
+    #logo {
+        font-size: 2.5vw;
+        letter-spacing: 0.3vw;
+    }
+
+
+    #nav-links li {
+        font-size: 1.5vw;
+        letter-spacing: 0.2vw;
+    }
+
+
+    #portal .section-content h1 {
+        font-size: 6vw;
+        letter-spacing: 0.8vw;
+    }
+
+
+    #portal .tagline {
+        font-size: 2vw;
+    }
+
+
+    #portal .subtitle {
+        font-size: 1.5vw;
+    }
+
+
+    .biome-content {
+        max-width: 80%;
+    }
+
+
+    .biome-content h2 {
+        max-width: 80%;
+    }
+
+
+    .biome-content p {
+        font-size: 1.5vw;
+    }
+
+
+    .btn-inferno, btn.abyss {
+        font-size: 1.2vw;
+        padding: 1vh 2vw;
+    }
+
+    #img-rift {
+        width: 35vw;
+    }
+
+
+    .modal-title {
+        font-size: 3.5vw;
+    }
+
+
+    .modal-section h3 {
+        font-size: 1.5vw;
+    }
+
+
+    .modal-section p {
+        font-size: 1.3vw;
+    }
+}
+
+
+
+/*MEDIA QUERIES - MOBILE*/
+@media (max-width: 768px) {
+    #main-header {
+        height: 10vh;
+    }
+
+
+    #logo {
+        font-size: 4vw;
+        letter-spacing: 0.3vw;
+    }
+
+
+    #nav-links {
+        gap: 4%;
+    }
+
+
+    #nav-links li {
+        font-size: 2.5vw;
+        letter-spacing: 0.1vw;
+    }
+
+
+    #portal .section-content h1 {
+        font-size: 8vw;
+        letter-spacing: 0.5vw;
+    }
+
+
+    #portal .tagline {
+        font-size: 3vw;
+    }
+
+
+    #portal .subtitle {
+        font-size: 2.5vw;
+    }
+
+
+    #img-portal {
+        width: 25%;
+        height: 10vh;
+    }
+
+
+    #biomes {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+
+    .biome {
+        min-height: 60vh;
+        margin: 0;
+        width: 100%;
+    }
+
+
+    #inferno {
+        padding-left: 0;
+    }
+
+
+    #abyss {
+        padding-left: 0;
+    }
+
+
+    #rift {
+        margin: 0;
+        padding: 2vh 0;
+        flex: none;
+        width: 100%;
+    }
+
+
+    #img-rift {
+        width: 60vh;
+    }
+
+
+    .biome-content {
+        max-width: 85%;
+        bottom: 2vh;
+    }
+
+
+    .biome-content h2 {
+        font-size: 5vw;
+        letter-spacing: 0.3vw;
+    }
+
+
+    .biome-content p {
+        font-size: 3vw;
+    }
+
+
+    .btn-inferno, .btn-abyss {
+        font-size: 2.5vw;
+        padding: 1.5vh 4vw;
+    }
+
+
+    #synthesis .section-content h2 {
+        font-size: 6vw;
+        letter-spacing: 0.5vw;
+    }
+
+
+    #synthesis .section-content p {
+        font-size: 3vw;
+        letter-spacing: 0.2vw;
+    }
+
+
+    #synthesis .section-content h3 {
+        font-size: 3vw;
+        letter-spacing: 0.3vw;
+    }
+
+
+    #footer-nav {
+        flex-wrap: wrap;
+        gap: 5%;
+    }
+
+
+    #footer-nav span {
+        font-size: 2.5vw;
+    }
+
+
+    #footer-hours {
+        font-size: 3vw;
+        letter-spacing: 0.2vw;
+    }
+
+
+    #footer-copy {
+        font-size: 2.5vw;
+    }
+
+
+    .modal-container {
+        flex-direction: column;
+        width: 95vw;
+        height: 90vh;
+    }
+
+
+    .modal-left {
+        width:  100%;
+        height: 90vh;
+    }
+
+
+    .modal-right {
+        width: 100%;
+        height: 65%;
+        padding: 2vh 4vw;
+    }
+
+
+    .modal-title {
+        font-size: 6vw;
+        letter-spacing: 0.3vw;
+    }
+
+
+    .modal-subtitle {
+        font-size: 2.5vw;
+    }
+
+
+    .modal-section h3 {
+        font-size: 3vw;
+    }
+
+
+    .modal-section p {
+        font-size: 2.5vw;
+    }
+
+
+    .modal-close {
+        width: 6vw;
+        height: 6vw;
+        font-size: 3vw;
+    }
+}
