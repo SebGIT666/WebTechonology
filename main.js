@@ -1,31 +1,30 @@
-//SOUND
+// SOUND
 const popup = document.getElementById('popup');
 const btnSoundOn = document.getElementById('btn-sound-on');
 const btnSoundOff = document.getElementById('btn-sound-off');
 
 btnSoundOn.addEventListener('click', function() {
-    popup.style.display ='none';
+    popup.style.display = 'none';
 });
 
-btnSoundOff.addEventListener('click', function(){
-    popup.style.display= 'none';
+btnSoundOff.addEventListener('click', function() {
+    popup.style.display = 'none';
 });
 
-
-//MODALS
+// MODALS
 function openModal(biome) {
     const modal = document.getElementById('modal-' + biome);
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
-function closeModal(biome){
-    const modal = document.getElementById('modal-'  + biome);
+function closeModal(biome) {
+    const modal = document.getElementById('modal-' + biome);
     modal.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
 
-document.querySelectorAll('.modal-overlay'). forEach(overlay => {
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
     overlay.addEventListener('click', function() {
         document.querySelectorAll('.modal.active').forEach(modal => {
             modal.classList.remove('active');
@@ -40,11 +39,11 @@ document.addEventListener('keydown', function(e) {
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         });
+        closeContent();
     }
 });
 
-
-//NAVIGATION
+// NAVIGATION
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -55,12 +54,11 @@ function scrollToSection(sectionId) {
     }
 }
 
-function navigationTo(page) {
+function navigateTo(page) {
     window.location.href = '/' + page;
 }
 
-
-//SCROLL ANIMATIONS
+// SCROLL ANIMATIONS
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -74,32 +72,37 @@ document.querySelectorAll('section, .biome-content, #synthesis .section-content'
     observer.observe(el);
 });
 
-
-//DYNAMIC CONTENT LOADER
+// DYNAMIC CONTENT LOADER
 function loadContent(page) {
     fetch(page + '-content.html')
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById('dynamic-content').innerHTML = html;
-        document.body.style.overflow ='hidden';
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('dynamic-content').innerHTML = html;
+            document.body.style.overflow = 'hidden';
 
-        if (page === 'faq') {
-            initAccordion();
-        }
-    })
-    .catch(error => {
-        console.error('Error loading content: ', error);
-    });
+            if (page === 'faq') {
+                initAccordion();
+            }
 
+            if (page === 'contact') {
+                initContactForm();
+            }
+        })
+        .catch(error => {
+            console.error('Error loading content: ', error);
+        });
 }
 
-function closeContent(){
-    document.getElementById('dynamic-content').innerHTML = '';
-    document.body.style.overflow = 'auto';
+function closeContent() {
+    const container = document.getElementById('dynamic-content');
+    if (container) {
+        container.innerHTML = '';
+        document.body.style.overflow = 'auto';
+    }
 }
 
-//Accordion for FAQ
-function initAccordion(){
+// ACCORDION FOR FAQ
+function initAccordion() {
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', function() {
             const item = this.parentElement;
@@ -116,8 +119,41 @@ function initAccordion(){
             if (!isActive) {
                 item.classList.add('active');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
-                icon.textContent = 'X';
+                icon.textContent = '✕';
             }
         });
+    });
+}
+
+// CONTACT FORM VALIDATION
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value.trim();
+        const feedback = document.getElementById('form-feedback');
+
+        if (!name || !email || !subject || !message) {
+            feedback.textContent = '⚠️ Please fill in all fields.';
+            feedback.className = 'feedback-error';
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            feedback.textContent = '⚠️ Please enter a valid email address.';
+            feedback.className = 'feedback-error';
+            return;
+        }
+
+        feedback.textContent = '✅ Message sent! We will contact you within 14 Earth days.';
+        feedback.className = 'feedback-success';
+        form.reset();
     });
 }

@@ -1081,3 +1081,114 @@ body::before {
 .faq-answer strong {
     color: #ffb300;
 }
+
+/*CONTACT PAGE*/
+#contact-container {
+    display: flex;
+    flex-direction: row;
+    gap: 4vw;
+    margin-top: 3vh;
+}
+
+#contact-info {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.contact-detail {
+    border-left: 2px solid #ffb30066;
+    padding-left: 1.5vw;
+}
+
+.contact-detail h3{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9vw;
+    letter-spacing: 0.2vw;
+    color: #ffb300;
+    margin-bottom: 1vh;
+}
+
+.contact-detail p {
+    font-size: 0.85vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
+}
+
+#contact-form-container {
+    width: 65%;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75vw;
+    letter-spacing: 0.2vw;
+    color: #e0e0e0;
+    margin-bottom: 1vh;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea {
+    width: 100%;
+    padding: 1.2vh 1vw;
+    background: #000000b3;
+    border: 1px solid #ffffff1a;
+    border-radius: 8px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.85vw;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ffb300;
+}
+
+.form-group option {
+    background: #0a0a0a;
+    color: #e0e0e0;
+}
+
+.form-group textarea {
+    resize:vertical;
+    min-height: 15vh;
+}
+
+#submit-btn {
+    width: 100%;
+    padding: 1.5vh 2vw;
+    background: linear-gradient(135deg, #ffb300, #cc2200);
+    border: none;
+    border-radius: 8px;
+    color: #000000;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85vw;
+    font-weight: 900;
+    letter-spacing: 0.3vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px #ffb30066;
+}
+
+#submit-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px #ffb300;
+}
+
+#form-feedback {
+    margin-top: 2vh;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85vw;
+    letter-spacing: 0.2vw;
+}
+
+.feedback-error {
+    color: #cc2200;
+}
+

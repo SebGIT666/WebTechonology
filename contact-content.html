@@ -1,0 +1,70 @@
+<div id="contact-modal" class="dynamic-modal">
+
+    <button class="dynamic-close" onclick="closeContent()">X</button>
+
+    <div class="dynamic-inner">
+        <h1 class="dynamic-title">Contact US</h1>
+        <p class="dynamic-subtitle">Get In Touch With Our Earth Visitor Center</p>
+        
+        <div id="contact-container">
+            <div id="contact-info">
+                <div class="contact-detail">
+                    <h3>Earth Visitor Centre</h3>
+                    <p>Cosmic Divide Headquarters<br>
+                    Saturn Exlporation District<br>
+                Earth, Solar System</p>
+                </div>
+
+                <div class="contact-detail">
+                    <h3>Opening Times</h3>
+                    <p>Open Every Day<br>
+                    9:00 AM - 6:00 PM</p>
+                </div>
+
+                <div class="contact-detail">
+                    <h3>Comunication</h3>
+                    <p>0boros87@solent.ac.uk<br>
+                    Student Id: 2002 Cosmic<br>
+                Quantum Link: SEB-PRIME-100</p>
+                </div>
+            </div>
+
+            <div id="contact-form-container">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Adress</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="booking">Booking Enquiry</option>
+                            <option value="inferno">Inferno Core Visit</option>
+                            <option value="abyss">Azure Abyss Visit</option>
+                            <option value="accomodation">Obsidian Lodge</option>
+                            <option value="emergency">Emergency Contact</option>
+                            <option value="othjer">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meeage">Message</label>
+                        <textarea id="message" name="message" placeholder="Enter your message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" id="submit-btn">SEND MESSAGE</button>
+                    <div id="form-feedback"></div>
+                </form>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
