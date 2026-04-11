@@ -64,12 +64,60 @@ function navigationTo(page) {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visable');
+            entry.target.classList.add('visible');
         }
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('section, .biome-content, #synthesis . section-content').forEach(el => {
+document.querySelectorAll('section, .biome-content, #synthesis .section-content').forEach(el => {
     el.classList.add('hidden');
     observer.observe(el);
 });
+
+
+//DYNAMIC CONTENT LOADER
+function loadContent(page) {
+    fetch(page + '-content.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('dynamic-content').innerHTML = html;
+        document.body.style.overflow ='hidden';
+
+        if (page === 'faq') {
+            initAccordion();
+        }
+    })
+    .catch(error => {
+        console.error('Error loading content: ', error);
+    });
+
+}
+
+function closeContent(){
+    document.getElementById('dynamic-content').innerHTML = '';
+    document.body.style.overflow = 'auto';
+}
+
+//Accordion for FAQ
+function initAccordion(){
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', function() {
+            const item = this.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            const isActive = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = '0';
+                i.querySelector('.faq-icon').textContent = '+';
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.textContent = 'X';
+            }
+        });
+    });
+}
