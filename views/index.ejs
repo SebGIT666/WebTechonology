@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Divide</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--POPUP WINDOW-->
+    <div id="popup">
+        <div id="popup-content">
+            <h2>Warning</h2>
+            <p>This experience contains sounds of alien nature.</p>
+            <p>For the best experience, turn on youe speakers.</p>
+            <div id="popup-buttons">
+                <button id="btn-sound-on">Enable Sound</button>
+                <button id="btn-sound-off">Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <!--HEADER-->
+    <header id="main-header">
+        <nav>
+            <div id="logo">
+                <span class="logo-cosmic">COSMIC</span>
+                <span class="logo-divide">DIVIDE</span>
+            </div>
+            <ul id="nav-links">
+                <li onclick="loadContent('explore')">EXPLORE</li>
+                <li onclick="loadContent('rift')">THE RIFT</li>
+                <li onclick="loadContent('faq')">FAQ</li>
+                <li onclick="loadContent('contact')">CONTACT</li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <!--MAIN CONTENT-->
+    <main>
+
+        <!--SECTION PORTAL-->
+        <section id="portal">
+            <div class="section-content">
+                <h1>COSMIC DIVIDE</h1>
+                <p class="tagline">Cross The Border Of Known Reality.</p>
+                <p class="subtitle">Exploration Of The Extremes.</p>
+            </div>
+
+            <img src="images/portal-bg.png" class="floating-island" id="img-portal" alt="Cosmic portal">
+
+        </section>
+
+        <!--Section BIOMS-->
+        <section id="biomes">
+            <!--INFERNO CORE-->
+            <div id="inferno" class="biome">
+                <img src="images/inferno-bg.png" class="floating-island" id="img-inferno" alt="Inferno Core volcanic island" onclick="openModal('inferno')">
+                <div class="biome-content">
+                    <h2>INFERNO CORE</h2>
+                    <p>Raw power of destruction and creation.
+                        Explore biomes where temperature reaches
+                        the limits of matter.</p>
+                    <button class="btn-inferno" onclick="openModal('inferno')">Enter The Fire</button>
+                </div>
+            </div>
+
+            <!--THE RIFT-->
+            <div id="rift">
+                <img src="images/rift-bg.png" id="img-rift" alt="The Rift Portal" onclick="loadContent('rift')" style="cursor: pointer">
+                <h2>WHERE OPPOSITES MEET</h2>
+            </div>
+
+            <!--AZURE ABYSS-->
+            <div id="abyss" class="biome">
+                <img src="images/abyss-bg.png" class="floating-island" id="img-abyss" alt="Azure Abyss coral island" onclick="openModal('abyss')">
+                <div class="biome-content">
+                    <h2>AZURE ABYSS</h2>
+                    <p>Silence, depth and mystery.
+                        Explore the underwater metropolis
+                        of alien nature teeming with life.</p>
+                    <button class="btn-abyss" onclick="openModal('abyss')">Dive Into The Abyss</button>
+                </div>
+            </div>
+        </section>
+
+        <!--Section SYNTHESIS-->
+        <section id="synthesis">
+            <div class="section-content">
+                <h2>THE SYNTHESIS</h2>
+                <p>Where fire meets water.
+                    Where destruction meets creation.</p>
+                <h3>YOUR JOURNEY HAS JUST BEGUN</h3>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!--FOOTER-->
+    <footer id="main-footer">
+        <div id="footer-nav">
+            <span onclick="loadContent('about')">About</span>
+            <span onclick="loadContent('privacy')">Privacy</span>
+            <span onclick="loadContent('legal')">Legal</span>
+            <span onclick="loadContent('contact')">Contact</span>
+        </div>
+
+        <div id="footer-hours">
+            <p>Open Every Day: 9:00 AM - 6:00 PM</p>
+        </div>
+
+        <div id="footer-copy">
+            <p>&copy; 2026 Cosmic Divide. All rights reserved</p>
+        </div>
+    </footer>
+
+    <!--INFERNO MODAL-->
+    <div id="modal-inferno" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container modal-inferno">
+            <!--CLOSE BUTTON-->
+            <button class="modal-close" onclick="closeModal('inferno')">X</button>
+            
+            <!--LEFT SIDE IMAGE-->
+            <div class="modal-left">
+                <img src="images/inferno_modal_bg.png" alt="Inferno Core landscape" class="modal-bg-img">
+                <img src="images/phoenix.png" alt="Ignis the Phoenix" class="modal-creature">
+            </div>
+
+            <!--RIGHT SIDE CONTENT-->
+            <div class="modal-right">
+                <h2 class="modal-title modal-title-inferno">INFERNO CORE</h2>
+                <p class="modal-subtitle">Seb Prime 100 - 147th Moon of Saturn</p>
+                
+                <div class="modal-section">
+                    <h3>The Biome</h3>
+                    <p>A vast volcanic landscape of osidian rock and molten lava rivers. 
+                        Temperature reaches 2,400C at the crater's core. 
+                        The geothermal energy powering the entire planet originates here.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Guardian - Ignis</h3>
+                    <p>The Phoenix Xeron lives for 333 years before combusting in the volcanic crater.
+                        From its ashes, new life erupts within 72hours.
+                        Its feathers conduct geothermal energy across the planet.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Flora</h3>
+                    <p>Xenite Bloom - crystal flowers that absorbs CO2. Ashroot Tree - indestructible
+                        black trees grown from phoenix ash. Embervine - glowing vines feeding on lava heat.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Experiences</h3>
+                    <p>Magma Gondola - Crystal Mine T
+                        our - Phoenix Watch Platform - Heat Lab - Lava River Cruise</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--AZURE ABYSS MODAL-->
+    <div id="modal-abyss" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container modal-abyss">
+
+            <!--CLOSE BUTTON-->
+            <button class="modal-close" onclick="closeModal('abyss')">X</button>
+
+            <!--LEFT SIDE IMAGE-->
+            <div class="modal-left">
+                <img src="images/abyss_modal_bg.png" alt="Azure Abyss underwater" class="modal-bg-img">
+                <img src="images/cracken.png" alt="Krakenis the Guardian" class="modal-creature">
+            </div>
+
+            <!--RIGHT SIDE CONTENT-->
+            <div class="modal-right">
+                <h2 class="modal-title modal-title-abyss">AZURE ABYSS</h2>
+                <p class="modal-subtitle">Seb Prime 100 - 147th Moon of Saturn</p>
+
+                <div class="modal-section">
+                    <h3>The Biome</h3>
+                    <p>A vast bioluminescent ocean warmed by underground lava tunnels from Inferno Core.
+                        Crystal coral reefs grow on obsidian glass formed where lava meets water at The Rift.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Guardian - Krakenis</h3>
+                    <p>An ancient being built from coral and cosmic obsidian. Its tentacles reach the thermal
+                        tunnels connecting both biomes. Without Krakenis, the ocean would freeze.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Flora</h3>
+                    <p>Luminos Coral - reef that glows and plays music. Tideweed - algae changing colour with
+                        emotions. Crystal Kelp - underwater crystal forest instead of seaweed.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Experiences</h3>
+                    <p>Deep Dive Pod - Crystal Reef Walk - Bioluminescene Night Swim - Mood Fish Aquarium - 
+                        Surface Safari</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dynamic-content"></div>
+
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

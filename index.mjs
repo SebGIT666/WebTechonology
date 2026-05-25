@@ -28,5 +28,5 @@ app.get('/', (req, res) => {
 //START SERVER
 
 app.listen(PORT, () => {
-    console.log('Cosmic Divide running on http://localhost:${PORT}');
+    console.log(`Cosmic Divide running on http://localhost:${PORT}`);
 });
