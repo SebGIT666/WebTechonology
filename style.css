@@ -49,7 +49,7 @@ body::before {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 0 2.5rem;
+    padding: 0 6rem 0 2.5rem;
 }
 
 #logo {
@@ -274,10 +274,24 @@ body::before {
 
 #img-inferno {
     filter: drop-shadow(0 0 30px rgba(255,100,0,0.3));
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#img-inferno:hover {
+    filter: drop-shadow(0 0 60px rgba(255,179,0,0.8));
+    transform: scale(1.02);
 }
 
 #img-abyss {
     filter: drop-shadow(0 0 30px rgba(0,180,216,0.3));
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#img-abyss:hover {
+    filter: drop-shadow(0 0 60px rgba(0,180,216,0.8));
+    transform: scale(1.02);
 }
 
 .biome-content {
@@ -389,9 +403,14 @@ body::before {
     width: 40vw;
     height: auto;
     filter: drop-shadow(0 0 40px rgba(255,255,255,0.4));
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-
+#img-rift:hover {
+    filter: drop-shadow(0 0 80px rgba(255,255,255,0.8));
+    transform: scale(1.02);
+}
 
 
 #synthesis {
@@ -427,8 +446,6 @@ body::before {
     letter-spacing: 0.6vw;
     color: #ffb300;
 }
-
-
 
 
 
@@ -953,6 +970,11 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
+}
+
+#dynamic-content:not(:empty) {
+    pointer-events: all;
 }
 
 .dynamic-modal {
@@ -1192,3 +1214,582 @@ body::before {
     color: #cc2200;
 }
 
+
+/*EXPLORE PAGE*/
+#explore-tabs {
+    display: flex;
+    gap: 1vw;
+    margin: 3vh 0;
+    justify-content: center;
+}
+
+.tab-btn {
+    padding: 1.5vh 3vw;
+    background: transparent;
+    border: 1px solid #ffffff33;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85vw;
+    letter-spacing: 0.2vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    border-color: #ffffff66;
+    background: #ffffff0d;
+}
+
+.tab-active {
+    border-color: #ffb300;
+    color: #ffb300;
+    background: #ffb30011;
+}
+
+.tab-abyss-active {
+    border-color: #00b4d8;
+    color: #00b4d8;
+    background: #00b4d811;
+}
+
+.tab-content {
+    width: 100%;
+}
+
+/*FLORA GRID*/
+.flora-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vh 2vw;
+    padding-bottom: 4vh;
+}
+
+.flora-card {
+    background: #000000b3;
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 2vh 1.5vw;
+    transition: all 0.3s ease;
+}
+
+.flora-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px #00000066;
+}
+
+.flora-card-inferno {
+    border-left: 3px soliod #ffb30066;
+}
+
+.flora-card-inferno:hover {
+    border-left-color: #ffb300;
+    box-shadow: 0 5px 20px #ffb30033;
+}
+
+.flora-card-abyss {
+    border-left: 3px solid #00b4d866;
+}
+
+.flora-card-abyss:hover {
+    border-left-color: #00b4d8;
+    box-shadow: 0 5px 20px #00b4d833;
+}
+
+.flora-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85vw;
+    letter-spacing: 0.2vw;
+    margin-bottom: 1vh;
+} 
+
+.flora-card-inferno h3 {
+    color:#ffb300;
+}
+
+.flora-card-abyss h3 {
+    color: #00b4d8;
+}
+
+.flora-desc {
+    font-size: 0.8vw;
+    line-height: 1.6;
+    color: #e0e0e0b3;
+    margin-bottom: 1vh;
+}
+
+.flora-role {
+    font-size: 0.75vw;
+    line-height: 1.6;
+    color: #ffffff66;
+    font-style: italic;
+}
+
+
+/*ABOUT PAGE*/
+.about-section {
+    margin-bottom: 4vh;
+    padding-bottom: 4vh;
+    border-bottom: 1px solid #ffffff1a;
+}
+
+.about-section-header {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 2vh;
+}
+
+.about-section-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 900;
+    letter-spacing: 0.3vw;
+    color: #ffb300;
+}
+
+.about-section strong {
+    color: #ffb300;
+}
+
+.about-section p {
+    font-size: 0.9vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
+}
+
+/*Mission Grid*/
+.about-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vh 2vw;
+    margin-top: 2vh;
+}
+
+.about-mission-card {
+    background: #000000b3;
+    border: 1px solid #ffb30033;
+    border-radius: 10px;
+    padding: 2vh 1.5vw;
+}
+
+.about-mission-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85vw;
+    color: #ffb300;
+    margin-bottom: 1vh;
+    letter-spacing: 0.1vw;
+}
+
+.about-mission-card p {
+    font-size: 0.8vw;
+    line-height: 1.6;
+    color: #e0e0e0b3;
+}
+
+/*Team Grid*/
+.about-team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vh 2vw;
+    margin-top: 2vh;
+}
+
+.about-team-card {
+    background: #000000b3;
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 2vh 1.5vw;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-team-card:hover {
+    border-color: #ffb30066;
+    transform: translateY(-3px);
+}
+
+.about-team-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85vw;
+    color: #ffffff;
+    margin-bottom: 0.5vh;
+    letter-spacing: 0.1vw;
+}
+
+.team-title {
+    font-size: 0.75vw;
+    color: #ffb300;
+    margin-bottom: 1vh;
+    font-style: italic;
+}
+
+.team-desc {
+    font-size: 0.75vw;
+    line-height: 1.6;
+    color: #e0e0e0b3;
+}
+
+/*Quote*/
+.about-quote {
+    background: linear-gradient(135deg, #1a0000, #000d1a);
+    border: 1px solid #ffb30033;
+    border-left: 4px solid #ffb300;
+    border-radius: 10px;
+    padding: 3vh 3vw;
+    margin: 3vh 0;
+    text-align: center;
+}
+
+.about-quote p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1vw;
+    letter-spacing: 0.2vw;
+    color: #ffffff;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 1vh;
+}
+
+.about-quote span {
+    font-size: 0.8vw;
+    color: #ffb30099;
+    letter-spacing: 0.2vw;
+}
+
+/*First Transit*/
+.about-transit {
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 2vh 2vw;
+    background: #000000b3;
+    border-bottom: 1px solid #ffffff1a;
+}
+
+.about-transit p {
+    font-size: 0.9vw;
+    color: #e0e0e0b3;
+    margin-bottom: 1vh;
+}
+
+.about-transit blockquote {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5vw;
+    color: #ffb300;
+    letter-spacing: 0.3vw;
+    margin: 1vh 0;
+    text-align: center;
+}
+
+.about-transit span {
+    font-size: 0.8vw;
+    color: #ffffff66;
+}
+
+
+/*THE RIFT PAGE*/
+.rift-section {
+    margin-bottom: 4vh;
+    padding-bottom: 4vh;
+    border-bottom: 1px solid #ffffff1a;
+}
+
+.rift-section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 900;
+    letter-spacing: 0.3vw;
+    color: #ffb300;
+    margin-bottom: 2vh;
+}
+
+.rift-section-intro {
+    font-size: 0.9vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
+    margin-bottom: 3vh;
+}
+
+/*Section 1 The Planet*/
+.rift-section-content {
+    display: flex;
+    gap: 3vw;
+    margin-bottom: 2vh;
+}
+
+.rift-text {
+    flex: 2;
+    font-size: 0.9vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
+}
+
+.rift-stats {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vh 1vw;
+}
+
+.rift-stat {
+    background: #000000b3;
+    border: 1px solid #ffb30033;
+    border-radius: 8px;
+    padding: 1.5vh 1vw;
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 900;
+    color: #ffb300;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.7vw;
+    letter-spacing: 0.1vw;
+    color: #ffffff66;
+    margin-top: 0.5vh;
+}
+
+.rift-time-box {
+    background: linear-gradient(135deg, #1a0000, #000d1a);
+    border: 1px solid #ffb30033;
+    border-left: 4px solid #ffb300;
+    border-radius: 10px;
+    padding: 2vh 2vw;
+}
+
+.rift-time-box p {
+    font-size: 0.9vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
+    margin-bottom: 1vh;
+}
+
+.rift-time-box strong {
+    color: #ffb300;
+}
+
+/*Section 2 The Portal*/
+.rift-portal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vh 2vw;
+}
+
+.rift-portal-card {
+    background: #000000b3;
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 2vh 2vw;
+    transition: all 0.3s ease;
+}
+
+.rift-portal-card:hover {
+    border-color: #ffb30066;
+    transform: translateY(-3px);
+}
+
+.rift-portal-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9vw;
+    color: #ffb300;
+    letter-spacing: 0.2vw;
+    margin-bottom: 1vh;
+}
+
+.rift-portal-card p {
+    font-size: 0.85vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
+}
+
+.rift-portal-card strong {
+    color: #ffb300;
+}
+
+/*Section 3 Symbiosis Diagram*/
+.symbiosis-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    margin: 3vh 0;
+    padding: 3vh 2vh;
+    background: #000000b3;
+    border-radius: 15px;
+    border: 1px solid #ffffff1a;
+}
+
+.symbiosis-node {
+    text-align: center;
+    padding: 2vh 2vw;
+    border-radius: 10px;
+    min-width: 15vw;
+}
+
+.node-inferno {
+    background: linear-gradient(135deg, #1a0000, #0a0a0a);
+    border: 1px solid #ffb30066;
+}
+
+.node-abyss {
+    background: linear-gradient(135deg, #000d1a, #0a0a0a);
+    border: 1px solid #00b4d866;
+}
+
+.symbiosis-node h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9vw;
+    letter-spacing: 0.2vw;
+    margin-bottom: 1vh;
+}
+
+.node-inferno h3 {color: #ffb300;}
+.node-abyss h3 {color: #00b4d8;}
+
+.symbiosis-node p {
+    font-size: 0.75vw;
+    color: #ffffff66;
+}
+
+.symbiosis-arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+.arrow-right, .arrow-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.arrow-label {
+    font-size: 0.7vw;
+    color: #ffffff66;
+    letter-spacing: 0.1vw;
+}
+
+.arrow-line {
+    font-size: 1.5vw;
+    color: #ffb300;
+}
+
+.symbiosis-rift {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8vw;
+    letter-spacing: 0.3vw;
+    color: #ffffff;
+    padding: 1vh 2vw;
+    background: #ffffff0d;
+    border-radius: 20px;
+    border: 1px solid #ffffff33;
+}
+
+/*Cycles*/
+.rift-cycles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vh 2vw;
+    margin-top: 2vh;
+}
+
+.rift-cycle {
+    background: #000000b3;
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 2vh 1.5vw;
+    transition: all 0.3s ease;
+}
+
+.rift-cycle:hover {
+    border-color: #00b4d866;
+    transform: translateY(-3px);
+}
+
+.rift-cycle h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85vw;
+    color: #00b4d8;
+    letter-spacing: 0.2vw;
+    margin-bottom: 1vh;
+}
+
+.rift-cycle p {
+    font-size: 0.8vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
+}
+
+/*Section 4 The Architects */
+.architects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vh 2vw;
+}
+
+.architects-card {
+    background: #000000b3;
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 2vh 2vw;
+    transition: all 0.3s ease;
+}
+
+.architects-card:hover {
+    border-color: #ffffff33;
+    transform: translateY(-3px);
+}
+
+.architects-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9vw;
+    color: #ffffff;
+    letter-spacing: 0.2vw;
+    margin-bottom: 1vh;
+}
+
+.architects-card p {
+    font-size: 0.85vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
+}
+
+.architects-quote {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9vw;
+    color: #ffb300;
+    letter-spacing: 0.2vw;
+    border-left: 3px solid #ffb300;
+    padding-left: 1vw;
+    margin-top: 1vh;
+    font-style: italic;
+}
+
+/*PRIVACY AND LEGAL PAGES*/
+.privacy-section {
+    margin-bottom: 3vh;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid #ffffff1a;
+}
+
+.privacy-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2vw;
+    font-weight: 900;
+    letter-spacing: 0.3vw;
+    color: #ffb300;
+    margin-bottom: 2vh;
+}
+
+.privacy-section p {
+    font-size: 0.9vw;
+    line-height: 1.8;
+    color: #e0e0e0b3;
+}

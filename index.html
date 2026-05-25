@@ -30,8 +30,8 @@
                 <span class="logo-divide">DIVIDE</span>
             </div>
             <ul id="nav-links">
-                <li onclick="scrollToSection('portal')">EXPLORE</li>
-                <li onclick="scrollToSection('rift')">THE RIFT</li>
+                <li onclick="loadContent('explore')">EXPLORE</li>
+                <li onclick="loadContent('rift')">THE RIFT</li>
                 <li onclick="loadContent('faq')">FAQ</li>
                 <li onclick="loadContent('contact')">CONTACT</li>
 
@@ -59,7 +59,7 @@
         <section id="biomes">
             <!--INFERNO CORE-->
             <div id="inferno" class="biome">
-                <img src="images/inferno-bg.png" class="floating-island" id="img-inferno" alt="Inferno Core volcanic island">
+                <img src="images/inferno-bg.png" class="floating-island" id="img-inferno" alt="Inferno Core volcanic island" onclick="openModal('inferno')">
                 <div class="biome-content">
                     <h2>INFERNO CORE</h2>
                     <p>Raw power of destruction and creation.
@@ -71,13 +71,13 @@
 
             <!--THE RIFT-->
             <div id="rift">
-                <img src="images/rift-bg.png" id="img-rift" alt="The Rift Portal">
+                <img src="images/rift-bg.png" id="img-rift" alt="The Rift Portal" onclick="loadContent('rift')" style="cursor: pointer">
                 <h2>WHERE OPPOSITES MEET</h2>
             </div>
 
             <!--AZURE ABYSS-->
             <div id="abyss" class="biome">
-                <img src="images/abyss-bg.png" class="floating-island" id="img-abyss" alt="Azure Abyss coral island">
+                <img src="images/abyss-bg.png" class="floating-island" id="img-abyss" alt="Azure Abyss coral island" onclick="openModal('abyss')">
                 <div class="biome-content">
                     <h2>AZURE ABYSS</h2>
                     <p>Silence, depth and mystery.
@@ -104,10 +104,10 @@
     <!--FOOTER-->
     <footer id="main-footer">
         <div id="footer-nav">
-            <span>About</span>
-            <span>Privacy</span>
-            <span>Legal</span>
-            <span>Contact</span>
+            <span onclick="loadContent('about')">About</span>
+            <span onclick="loadContent('privacy')">Privacy</span>
+            <span onclick="loadContent('legal')">Legal</span>
+            <span onclick="loadContent('contact')">Contact</span>
         </div>
 
         <div id="footer-hours">

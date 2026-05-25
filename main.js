@@ -157,3 +157,24 @@ function initContactForm() {
         form.reset();
     });
 }
+
+//EXPLORE TABS
+function switchTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(t=> {
+        t.style.display = 'none';
+    });
+
+    document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('tab-active');
+        b.classList.remove('tab-abyss-active');
+    });
+
+    document.getElementById('tab-' + tab).style.display = 'block';
+
+    const buttons = document.querySelectorAll('.tab-btn');
+    if (tab === 'inferno') {
+        buttons[0].classList.add('tab-active');
+    } else {
+        buttons[1].classList.add('tab-abyss-active');
+    }
+}
