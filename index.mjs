@@ -8,7 +8,7 @@ import db from './database.mjs';
 
 //SETUP
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -87,4 +87,30 @@ app.post('/api/contact', (req, res) => {
 
     stmt.run(name, email, subject, message);
     res.json({success: true, message: 'Message sent successfully'});
+});
+
+
+// ADMIN PANEL
+app.get('/admin', (req, res) => {
+    const key = req.query.key;
+
+    if (key !== 'cosmic2026') {
+        return res.status(403).send(`
+            <h1 style="font-family:monospace; color:red; text-align:center; margin-top:20vh">
+                403 — ACCESS DENIED
+            </h1>
+        `);
+    }
+
+    const contacts = db.prepare('SELECT * FROM contacts ORDER BY created_at DESC').all();
+    const flora = db.prepare('SELECT * FROM flora ORDER BY habitat_id').all();
+
+    const stats = {
+        contacts: db.prepare('SELECT COUNT(*) as count FROM contacts').get().count,
+        flora: db.prepare('SELECT COUNT(*) as count FROM flora').get().count,
+        fauna: db.prepare('SELECT COUNT(*) as count FROM fauna').get().count,
+        attractions: db.prepare('SELECT COUNT(*) as count FROM attractions').get().count
+    };
+
+    res.render('admin', { contacts, flora, stats });
 });

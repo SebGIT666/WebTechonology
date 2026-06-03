@@ -181,7 +181,7 @@ body::before {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 8vh;
+    padding-top: 12vh;
     padding-bottom: 0px;
     gap: 0.5vh;
 }
@@ -737,7 +737,7 @@ body::before {
     }
 
 
-    .btn-inferno, btn.abyss {
+    .btn-inferno, .btn-abyss {
         font-size: 1.2vw;
         padding: 1vh 2vw;
     }
@@ -1159,6 +1159,7 @@ body::before {
     background: #000000b3;
     border: 1px solid #ffffff1a;
     border-radius: 8px;
+    color: #e0e0e0;
     font-family: 'Exo 2', sans-serif;
     font-size: 0.85vw;
     transition: border-color 0.3s ease;
@@ -1279,7 +1280,7 @@ body::before {
 }
 
 .flora-card-inferno {
-    border-left: 3px soliod #ffb30066;
+    border-left: 3px solid #ffb30066;
 }
 
 .flora-card-inferno:hover {

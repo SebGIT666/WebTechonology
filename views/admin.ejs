@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel — Cosmic Divide</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { padding: 2vh 2vw; }
+
+        .admin-header {
+            font-family: 'Orbitron', sans-serif;
+            color: #ffb300;
+            font-size: 2vw;
+            letter-spacing: 0.5vw;
+            margin-bottom: 4vh;
+            border-bottom: 1px solid #ffb30033;
+            padding-bottom: 2vh;
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2vw;
+            margin-bottom: 4vh;
+        }
+
+        .stat-card {
+            background: #000000b3;
+            border: 1px solid #ffb30033;
+            border-radius: 10px;
+            padding: 2vh 2vw;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2vw;
+            color: #ffb300;
+            margin-bottom: 1vh;
+        }
+
+        .stat-card p {
+            font-size: 0.8vw;
+            color: #ffffff66;
+            letter-spacing: 0.2vw;
+        }
+
+        .admin-section {
+            margin-bottom: 4vh;
+        }
+
+        .admin-section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2vw;
+            color: #ffb300;
+            letter-spacing: 0.3vw;
+            margin-bottom: 2vh;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .admin-table th {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75vw;
+            letter-spacing: 0.2vw;
+            color: #ffb300;
+            padding: 1.5vh 1vw;
+            text-align: left;
+            border-bottom: 1px solid #ffb30033;
+        }
+
+        .admin-table td {
+            font-size: 0.8vw;
+            color: #e0e0e0b3;
+            padding: 1.5vh 1vw;
+            border-bottom: 1px solid #ffffff0d;
+        }
+
+        .admin-table tr:hover td {
+            background: #ffffff05;
+            color: #e0e0e0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 1vh 2vw;
+            background: transparent;
+            border: 1px solid #ffb300;
+            color: #ffb300;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75vw;
+            letter-spacing: 0.2vw;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-bottom: 3vh;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background: #ffb300;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-btn">← BACK TO SITE</a>
+
+    <h1 class="admin-header">⚡ COSMIC DIVIDE — ADMIN PANEL</h1>
+
+    <!-- STATS -->
+    <div class="admin-stats">
+        <div class="stat-card">
+            <h3><%= stats.contacts %></h3>
+            <p>MESSAGES</p>
+        </div>
+        <div class="stat-card">
+            <h3><%= stats.flora %></h3>
+            <p>FLORA SPECIES</p>
+        </div>
+        <div class="stat-card">
+            <h3><%= stats.fauna %></h3>
+            <p>FAUNA SPECIES</p>
+        </div>
+        <div class="stat-card">
+            <h3><%= stats.attractions %></h3>
+            <p>ATTRACTIONS</p>
+        </div>
+    </div>
+
+    <!-- MESSAGES -->
+    <div class="admin-section">
+        <h2>📧 CONTACT MESSAGES</h2>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>SUBJECT</th>
+                    <th>MESSAGE</th>
+                    <th>DATE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (contacts.length === 0) { %>
+                    <tr>
+                        <td colspan="6" style="text-align:center; color:#ffffff33;">
+                            No messages yet
+                        </td>
+                    </tr>
+                <% } else { %>
+                    <% contacts.forEach(contact => { %>
+                        <tr>
+                            <td><%= contact.id %></td>
+                            <td><%= contact.name %></td>
+                            <td><%= contact.email %></td>
+                            <td><%= contact.subject %></td>
+                            <td><%= contact.message %></td>
+                            <td><%= contact.created_at %></td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- FLORA -->
+    <div class="admin-section">
+        <h2>🌿 FLORA CATALOGUE</h2>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>HABITAT</th>
+                    <th>NAME</th>
+                    <th>ECOSYSTEM ROLE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% flora.forEach(plant => { %>
+                    <tr>
+                        <td><%= plant.id %></td>
+                        <td><%= plant.habitat_id === 1 ? 'Inferno' : 'Abyss' %></td>
+                        <td><%= plant.name %></td>
+                        <td><%= plant.ecosystem_role %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
