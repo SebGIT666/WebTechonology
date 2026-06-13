@@ -112,7 +112,7 @@
 <body>
     <a href="/" class="back-btn">← BACK TO SITE</a>
 
-    <h1 class="admin-header">⚡ COSMIC DIVIDE — ADMIN PANEL</h1>
+    <h1 class="admin-header">COSMIC DIVIDE — ADMIN PANEL</h1>
 
     <!-- STATS -->
     <div class="admin-stats">
@@ -136,7 +136,7 @@
 
     <!-- MESSAGES -->
     <div class="admin-section">
-        <h2>📧 CONTACT MESSAGES</h2>
+        <h2>CONTACT MESSAGES</h2>
         <table class="admin-table">
             <thead>
                 <tr>
@@ -173,7 +173,7 @@
 
     <!-- FLORA -->
     <div class="admin-section">
-        <h2>🌿 FLORA CATALOGUE</h2>
+        <h2>FLORA CATALOGUE</h2>
         <table class="admin-table">
             <thead>
                 <tr>
@@ -190,6 +190,56 @@
                         <td><%= plant.habitat_id === 1 ? 'Inferno' : 'Abyss' %></td>
                         <td><%= plant.name %></td>
                         <td><%= plant.ecosystem_role %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- FAUNA -->
+    <div class="admin-section">
+        <h2>FAUNA CATALOGUE</h2>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>HABITAT</th>
+                    <th>NAME</th>
+                    <th>GUARDIAN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% fauna.forEach(animal => { %>
+                    <tr>
+                        <td><%= animal.id %></td>
+                        <td><%= animal.habitat_id === 1 ? 'Inferno Core' : 'Azure Abyss' %></td>
+                        <td><%= animal.name %></td>
+                        <td><%= animal.is_guardian === 1 ? 'Yes' : 'No' %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ATTRACTIONS -->
+    <div class="admin-section">
+        <h2>ATTRACTIONS</h2>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>HABITAT</th>
+                    <th>NAME</th>
+                    <th>DURATION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% attractions.forEach(attraction => { %>
+                    <tr>
+                        <td><%= attraction.id %></td>
+                        <td><%= attraction.habitat_id === 1 ? 'Inferno Core' : 'Azure Abyss' %></td>
+                        <td><%= attraction.name %></td>
+                        <td><%= attraction.duration %></td>
                     </tr>
                 <% }) %>
             </tbody>

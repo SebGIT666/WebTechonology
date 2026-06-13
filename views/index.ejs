@@ -16,7 +16,7 @@
             <p>This experience contains sounds of alien nature.</p>
             <p>For the best experience, turn on youe speakers.</p>
             <div id="popup-buttons">
-                <button id="btn-sound-on">Enable Sound</button>
+                <button id="btn-sound-on" aria-label="Enable Sound">Enable Sound</button>
                 <button id="btn-sound-off">Skip</button>
             </div>
         </div>
@@ -49,6 +49,9 @@
                 <h1>COSMIC DIVIDE</h1>
                 <p class="tagline">Cross The Border Of Known Reality.</p>
                 <p class="subtitle">Exploration Of The Extremes.</p>
+                <p class="portal-description">The worlds first interplanetary eco adventure park, 
+                    sited on Seb Prime 100  the 147th moon of Saturn. 
+                    Two wild biomes, one experience you won’t forget, ever.</p>
             </div>
 
             <img src="images/portal-bg.png" class="floating-island" id="img-portal" alt="Cosmic portal">
@@ -108,6 +111,7 @@
             <span onclick="loadContent('privacy')">Privacy</span>
             <span onclick="loadContent('legal')">Legal</span>
             <span onclick="loadContent('contact')">Contact</span>
+            <span onclick="navigateTo('sitemap')">Site Map</span>
         </div>
 
         <div id="footer-hours">
@@ -124,7 +128,7 @@
         <div class="modal-overlay"></div>
         <div class="modal-container modal-inferno">
             <!--CLOSE BUTTON-->
-            <button class="modal-close" onclick="closeModal('inferno')">X</button>
+            <button class="modal-close" onclick="closeModal('inferno')" aria-label="closeModal">X</button>
             
             <!--LEFT SIDE IMAGE-->
             <div class="modal-left">
@@ -173,7 +177,7 @@
         <div class="modal-container modal-abyss">
 
             <!--CLOSE BUTTON-->
-            <button class="modal-close" onclick="closeModal('abyss')">X</button>
+            <button class="modal-close" onclick="closeModal('abyss')" aria-label="closeModal">X</button>
 
             <!--LEFT SIDE IMAGE-->
             <div class="modal-left">

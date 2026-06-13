@@ -104,6 +104,8 @@ app.get('/admin', (req, res) => {
 
     const contacts = db.prepare('SELECT * FROM contacts ORDER BY created_at DESC').all();
     const flora = db.prepare('SELECT * FROM flora ORDER BY habitat_id').all();
+    const fauna = db.prepare('SELECT * FROM fauna ORDER BY habitat_id').all();
+    const attractions = db.prepare('SELECT * FROM attractions ORDER BY habitat_id').all();
 
     const stats = {
         contacts: db.prepare('SELECT COUNT(*) as count FROM contacts').get().count,
@@ -112,5 +114,10 @@ app.get('/admin', (req, res) => {
         attractions: db.prepare('SELECT COUNT(*) as count FROM attractions').get().count
     };
 
-    res.render('admin', { contacts, flora, stats });
+    res.render('admin', { contacts, flora, fauna, attractions, stats });
+});
+
+//Site Map
+app.get('/sitemap', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'sitemap.html'));
 });
